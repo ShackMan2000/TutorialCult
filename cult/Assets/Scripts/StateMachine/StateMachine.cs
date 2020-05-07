@@ -19,6 +19,7 @@ public class StateMachine : MonoBehaviour
 
         allStates = states;
         currentState = allStates[defaultState];
+        currentState.EnterState();
     }
 
 

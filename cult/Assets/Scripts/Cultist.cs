@@ -11,7 +11,7 @@ public class Cultist : MonoBehaviour
     public bool TESTgetYourAssToWork;
 
 
-
+    public float health;
 
 
 
@@ -21,6 +21,9 @@ public class Cultist : MonoBehaviour
 
     private void Awake()
     {
+
+        health = 100f;
+
         stateMachine = GetComponent<StateMachine>();
 
         Dictionary<Type, State> allStates = new Dictionary<Type, State>()
@@ -28,6 +31,8 @@ public class Cultist : MonoBehaviour
             {typeof(StateIdle), new StateIdle(this) },
             {typeof(StateWork), new StateWork(this) },
             {typeof(StateEat), new StateEat(this) },
+            {typeof(StateDie), new StateDie(this) },
+            {typeof(StateSleep), new StateSleep(this) },
         };
 
 
@@ -40,6 +45,20 @@ public class Cultist : MonoBehaviour
 
 
 
+    public void ChangeHealth(float amount)
+    {
+        health += amount;
+        print("got punched in the face and lost " + amount + " health");
+
+    }
+
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            ChangeHealth(-40f);
+    }
 
 
 

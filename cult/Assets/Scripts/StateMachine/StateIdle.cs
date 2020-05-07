@@ -13,10 +13,21 @@ public class StateIdle : State
     }
 
 
+    public override void EnterState()
+    {
+        base.EnterState();
+    }
+
 
 
     public override Type UpdateState()
     {
+
+       Type priorityState =  base.UpdateState();
+        if (priorityState != null)
+            return priorityState;
+
+
         if (cultist.TESTgetYourAssToWork)
             return typeof(StateWork);
 
