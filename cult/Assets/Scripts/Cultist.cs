@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cultist : MonoBehaviour
+public class Cultist : MonoBehaviour, IClickable
 {
 
 
@@ -60,6 +60,12 @@ public class Cultist : MonoBehaviour
             ChangeHealth(-40f);
     }
 
+    public void Click()
+    {
 
+        Vector3 scale = transform.localScale;
+        scale *= 1.5f;
+        transform.localScale = scale;
 
+    }
 }
