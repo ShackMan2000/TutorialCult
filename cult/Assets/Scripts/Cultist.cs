@@ -14,6 +14,9 @@ public class Cultist : MonoBehaviour, IClickable
     public float health;
 
 
+    [SerializeField]
+    private FloatSO wood;
+
 
     private StateMachine stateMachine;
 
@@ -58,6 +61,14 @@ public class Cultist : MonoBehaviour, IClickable
     {
         if (Input.GetKeyDown(KeyCode.Space))
             ChangeHealth(-40f);
+        if (Input.GetKeyDown(KeyCode.A))
+            wood.ChangeAmountBy(10f);
+        if (Input.GetKeyDown(KeyCode.R))
+            wood.ChangeAmountBy(-5f);
+
+
+
+
     }
 
     public void Click()

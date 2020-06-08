@@ -57,8 +57,6 @@ public class ClickManager : MonoBehaviour
 
 
 
-
-
             Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 

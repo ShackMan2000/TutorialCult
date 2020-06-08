@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TESTgetYourAssToWork: 0
   health: 0
+  wood: {fileID: 11400000, guid: a86d35da2e34f864cb3ce19f3ea1186c, type: 2}
 --- !u!114 &7822233094926974448
 MonoBehaviour:
   m_ObjectHideFlags: 0
